@@ -21,10 +21,11 @@ public class LambdaOneFunctions {
         Collections.sort(personList, (p1, p2) -> p1.getLastName().compareTo(p2.getLastName()));
 
         //step 2: Create a method that prints all the elements in the list
-
+        System.out.println("Printing from the step 1");
         printLastNameBeginwithC(personList,p ->true, p -> System.out.println(p));
 
         //step 3: Create a method that prints all people that have the last name beginning with C
+        System.out.println("Printing from the step 1");
         printLastNameBeginwithC(personList, p -> p.getLastName().startsWith("C"), p -> System.out.println(p));
     }
 
