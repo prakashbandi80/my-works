@@ -11,11 +11,11 @@ public class MethodReferenceExample2 {
     public static void main(String[] args) {
 
         List<PersonOne> personList = Arrays.asList(
-                new PersonOne("Charles", "Dickens", 60),
-                new PersonOne("Lewis", "Carroll", 42),
-                new PersonOne("Thomas", "Carlyle", 51),
-                new PersonOne("Charlotte", "Bronte", 45),
-                new PersonOne("Mathew", "Arnold", 39)
+                new PersonOne("Charles", "Dickens", "charles.dick@gmail.com",39,Arrays.asList("2345")),
+                new PersonOne("Lewis", "Carroll", "charles.dick@gmail.com",39,Arrays.asList("2345")),
+                new PersonOne("Thomas", "Carlyle", "charles.dick@gmail.com",39,Arrays.asList("2345")),
+                new PersonOne("Charlotte", "Bronte", "charles.dick@gmail.com",39,Arrays.asList("2345")),
+                new PersonOne("Mathew", "Arnold", "charles.dick@gmail.com",39,Arrays.asList("2345"))
         );
 
 
