@@ -25,6 +25,6 @@ public class CropRatio {
         cropRatio.add("Wheat", 5);
         cropRatio.add("Rice", 1);
 
-        System.out.println("Fraction of wheat: " + cropRatio.proportion("Wheat"));
+        System.out.println("Fraction of wheat: " + cropRatio.proportion("Rice"));
     }
 }

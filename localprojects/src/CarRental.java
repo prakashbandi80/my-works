@@ -1,31 +1,23 @@
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Locale;
 
 public class CarRental {
     public static Boolean canScheduleAll(Collection<RentalTime> rentalTimes) {
 
-        /*
-        * box1 - Prakash index = 0
-        * box2 - Sredevi index = 1
-        * box3 - Pradeep index = 2
-        * box4 - Prathap index = 3
-        *
-        *
-        * */
-
-
-
-       Boolean scheduleAll = false;
+       Long minDate = 0l;
         for(RentalTime t: rentalTimes){
-            if(t.getStart().getTime() < t.getEnd().getTime()){
-                scheduleAll = true;
-            }
-
+            if(t.getEnd().getTime() < t.getStart().getTime())
+                return false;
+            if(t.getEnd().getTime() < minDate)
+                return false;
+            minDate = t.getEnd().getTime();
         }
 
-       return scheduleAll;
+       return true;
     }
 
     public static void main(String[] args) throws Exception {
@@ -34,8 +26,8 @@ public class CarRental {
 
         ArrayList<RentalTime> rentalTimes = new ArrayList<RentalTime>();
         rentalTimes.add(new RentalTime(sdf.parse("03/05/2020 19:00"), sdf.parse("03/05/2020 20:30")));
-        rentalTimes.add(new RentalTime(sdf.parse("03/05/2020 22:10"), sdf.parse("03/05/2020 22:30")));
-        rentalTimes.add(new RentalTime(sdf.parse("03/05/2020 20:30"), sdf.parse("03/05/2020 22:00")));
+        rentalTimes.add(new RentalTime(sdf.parse("03/05/2020 20:50"), sdf.parse("03/05/2020 22:30")));
+        rentalTimes.add(new RentalTime(sdf.parse("03/05/2020 22:31"), sdf.parse("03/05/2020 22:50")));
 
         System.out.println(CarRental.canScheduleAll(rentalTimes));
     }
@@ -57,3 +49,10 @@ class RentalTime {
         return this.end;
     }
 }
+
+
+/*
+*
+*
+*
+* */
