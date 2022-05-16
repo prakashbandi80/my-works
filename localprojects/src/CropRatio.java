@@ -15,7 +15,11 @@ public class CropRatio {
     }
 
     public double proportion(String name) {
-        return totalWeight * crops.get(name)/100d;
+        double totalWeight = 0;
+        if(crops.get(name)!=null)
+            totalWeight =  totalWeight * crops.get(name)/100d;
+
+        return totalWeight;
     }
 
     public static void main(String[] args) {
@@ -25,6 +29,6 @@ public class CropRatio {
         cropRatio.add("Wheat", 5);
         cropRatio.add("Rice", 1);
 
-        System.out.println("Fraction of wheat: " + cropRatio.proportion("Rice"));
+        System.out.println("Fraction of wheat: " + cropRatio.proportion("Test"));
     }
 }
